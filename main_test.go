@@ -29,7 +29,7 @@ func TestInverseKinematics(t *testing.T) {
 		{9.0, 5.0, 5.3, 10.0},
 		{0.001, 0.001, 5.3, 3.0},
 		{5.3, 0.0, 5.3, 3.0},  
-		{0.0, 5.3, 5.3, 3.0},  
+		{0.0, 5.3, -5.3, 3.0},  
 		{6.0, 4.0, -5.3, 3.0},
 		{6.0, 4.0, 5.3, -3.0},
 		{6.0, 4.0, -5.3, -3.0},
@@ -37,6 +37,7 @@ func TestInverseKinematics(t *testing.T) {
 		{5.3, 0.0, -5.3, 3.0},
 	}
 
+	t.Errorf("special error")
 	for _, test := range tests {
 			theta1, theta2, err := inverseKinematics(test.x, test.y, test.l1, test.l2)
 
