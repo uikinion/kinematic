@@ -57,5 +57,5 @@ func main() {
         return
     }
 
-    fmt.Printf("angle 1 %.2f degrees, angle 2 %.2f degrees\n", theta1, theta2)
+    fmt.Printf("angle 1 %.2f degrees, angle 2 %.2f degrees\n", theta1, theta2) //
 }
