@@ -3,7 +3,7 @@ name: Build and Push Docker Image
 on:
   push:
     branches:
-      - main  # Запуск при пуше в main
+      - main  
 
 jobs:
   build-and-push:
@@ -21,6 +21,6 @@ jobs:
 
       - name: Сборка и пуш в Docker Hub
         run: |
-          docker build -t your-dockerhub-username/your-app:latest .
-          docker push your-dockerhub-username/your-app:latest
+          docker build -t uikinionn/test-app:latest .
+          docker push uikinionn/test-app:latest
 
