@@ -1,0 +1,30 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - main  # Триггер при пуше в main
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout репозитория
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Нужно для анализа коммитов
+
+      - name: Установка Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Установка зависимостей
+        run: npm ci
+
+      - name: Запуск `semantic-release`
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npx semantic-release
+
