@@ -19,7 +19,7 @@ func inverseKinematics(x, y, l1, l2 float64) (float64, float64, error) {
 
 	cosA := (r*r - l2*l2 + l1*l1) / (2 * l1 * r)
 	cosA = math.Max(-1, math.Min(1, cosA))
-	angleA := math.Acos(cosA)
+	angleA := math.Acos(cosA) //
 
 	cosB := (-r*r + l1*l1 + l2*l2) / (2 * l1 * l2)
 	cosB = math.Max(-1, math.Min(1, cosB))
