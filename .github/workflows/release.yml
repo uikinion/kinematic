@@ -3,7 +3,8 @@ name: Release
 on:
   push:
     branches:
-      - main  # Триггер при пуше в main
+
+      - main
 
 jobs:
   release:
@@ -17,6 +18,7 @@ jobs:
 
       - name: Установка Node.js 20
         uses: actions/setup-node@v4
+
         with:
           node-version: 20
 
