@@ -10,21 +10,20 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout репозитория
+      - name: Checkout repo
         uses: actions/checkout@v4
         with:
           fetch-depth: 0  # Нужно для анализа коммитов
 
-      - name: Установка Node.js
+      - name: Установка Node.js 20
         uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 28
 
-      - name: Установка зависимостей
-        run: npm ci
+      - name: Install dependencies
+        run: npm install
 
-      - name: Запуск `semantic-release`
+      - name: Run Semantic Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: npx semantic-release
-
