@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/uikinion/kinematic/compare/v1.2.1...v1.3.0) (2025-04-01)
+
+
+### Features
+
+* **auth:** удален метод signUp ([3b2ae1b](https://github.com/uikinion/kinematic/commit/3b2ae1b6a2f375f0856efdaf96e386f67e98a666))
+
 ## [1.2.1](https://github.com/uikinion/kinematic/compare/v1.2.0...v1.2.1) (2025-04-01)
 
 
