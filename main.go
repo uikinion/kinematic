@@ -15,7 +15,7 @@ func inverseKinematics(x, y, l1, l2 float64) (float64, float64, error) {
 
 	if r > l1+l2 || r < math.Abs(l1-l2) {
 		return 0, 0, fmt.Errorf("impossible to reach the point")
-	}
+	} //
 
 	cosA := (r*r - l2*l2 + l1*l1) / (2 * l1 * r)
 	cosA = math.Max(-1, math.Min(1, cosA))
