@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/uikinion/kinematic/compare/v1.3.0...v1.4.0) (2025-04-01)
+
+
+### Features
+
+* **api:** изменен формат входных данных для метода login  BREAKING CHANGE: новый формат данных для метода login требует изменения структуры объекта пользователя. ([0a5966d](https://github.com/uikinion/kinematic/commit/0a5966d1e58b151fa447244e5816b07b09873540))
+
 # [1.3.0](https://github.com/uikinion/kinematic/compare/v1.2.1...v1.3.0) (2025-04-01)
 
 
