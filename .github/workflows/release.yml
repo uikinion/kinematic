@@ -3,7 +3,6 @@ name: Release
 on:
   push:
     branches:
-
       - main
 
 jobs:
@@ -18,12 +17,11 @@ jobs:
 
       - name: Установка Node.js 20
         uses: actions/setup-node@v4
-
         with:
-          node-version: 20
+          node-version: '22.14.0'
 
       - name: Install dependencies
-        run: npm install
+        run: sudo npm ci
 
       - name: Run Semantic Release
         env:
