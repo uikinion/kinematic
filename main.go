@@ -7,11 +7,11 @@ import (
 
 func inverseKinematics(x, y, l1, l2 float64) (float64, float64, error) {
 
-	if l1 <= 0 || l2 <= 0 {
+	if l1 <= 0 || l2 <= 0 { //
 		return 0, 0, fmt.Errorf("lengths must be positive: l1=%.3f, l2=%.3f", l1, l2)
 	}
 
-	r := math.Sqrt(x*x + y*y)
+	r := math.Sqrt(x*x + y*y) //
 
 	if r > l1+l2 || r < math.Abs(l1-l2) {
 		return 0, 0, fmt.Errorf("impossible to reach the point")
