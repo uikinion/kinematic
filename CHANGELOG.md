@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/uikinion/kinematic/compare/v1.1.0...v1.2.0) (2025-04-01)
+
+
+### Features
+
+* test spd2 ([9d8da7e](https://github.com/uikinion/kinematic/commit/9d8da7e41400d394b2027d18e567c548b976385c))
+
 # [1.1.0](https://github.com/uikinion/kinematic/compare/v1.0.0...v1.1.0) (2025-04-01)
 
 
