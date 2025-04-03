@@ -17,28 +17,35 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up Go
-        uses: actions/setup-go@v5
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
         with:
-          go-version: 1.21
+          distribution: 'temurin'
+          java-version: '17'
 
-      - name: Install SonarScanner
-        run: |
-          curl -sSLo sonar-scanner.zip https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-5.0.1.3006-linux.zip
-          unzip sonar-scanner.zip
-          mv sonar-scanner-5.0.1.3006-linux sonar-scanner
-          echo "$(pwd)/sonar-scanner/bin" >> $GITHUB_PATH
+      - name: Cache SonarCloud packages
+        uses: actions/cache@v3
+        with:
+          path: ~/.sonar/cache
+          key: ${{ runner.os }}-sonar
+          restore-keys: ${{ runner.os }}-sonar
 
-      - name: Run tests with coverage
-        run: go test ./... -coverprofile=coverage.out
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.m2/repository
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+          key: ${{ runner.os }}-build-${{ hashFiles('**/*.gradle*', '**/pom.xml') }}
+          restore-keys: ${{ runner.os }}-build
 
-      - name: Run SonarScanner
+      - name: Run SonarCloud Scan
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: |
           sonar-scanner \
-            -Dsonar.projectKey=uikinion_kinematic \
             -Dsonar.organization=uikinion \
-            -Dsonar.host.url=https://sonarcloud.io \
-            -Dsonar.coverage.exclusions=**/vendor/** \
-            -Dsonar.go.coverage.reportPaths=coverage.out
+            -Dsonar.projectKey=uikinion_kinematic \
+            -Dsonar.sources=. \
+            -Dsonar.host.url=https://sonarcloud.io
