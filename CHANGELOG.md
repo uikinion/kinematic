@@ -1,3 +1,10 @@
+## [1.5.5](https://github.com/uikinion/kinematic/compare/v1.5.4...v1.5.5) (2025-04-03)
+
+
+### Bug Fixes
+
+* sonar ([2d70895](https://github.com/uikinion/kinematic/commit/2d70895e9e6d684091a50e5310a218af76ab19d1))
+
 ## [1.5.4](https://github.com/uikinion/kinematic/compare/v1.5.3...v1.5.4) (2025-04-03)
 
 
