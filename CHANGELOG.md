@@ -1,3 +1,10 @@
+## [1.4.5](https://github.com/uikinion/kinematic/compare/v1.4.4...v1.4.5) (2025-04-03)
+
+
+### Bug Fixes
+
+* st test ([6b05584](https://github.com/uikinion/kinematic/commit/6b05584d78cf0b6ef0987ea4f8cb17c459453b85))
+
 ## [1.4.4](https://github.com/uikinion/kinematic/compare/v1.4.3...v1.4.4) (2025-04-03)
 
 
