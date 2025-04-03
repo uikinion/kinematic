@@ -1,3 +1,10 @@
+## [1.5.1](https://github.com/uikinion/kinematic/compare/v1.5.0...v1.5.1) (2025-04-03)
+
+
+### Bug Fixes
+
+* depend ([6cf23c7](https://github.com/uikinion/kinematic/commit/6cf23c70407ca60cabe8f84c4a64fb9519d627c4))
+
 # [1.5.0](https://github.com/uikinion/kinematic/compare/v1.4.5...v1.5.0) (2025-04-03)
 
 
