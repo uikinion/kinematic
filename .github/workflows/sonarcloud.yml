@@ -1,31 +1,47 @@
-name: SonarQube Analysis
+name: SonarCloud
 
 on:
   push:
     branches:
       - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
-  sonar:
+  sonarcloud:
+    name: SonarCloud Scan
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v3
 
       - name: Set up Go
-        uses: actions/setup-go@v5
+        uses: actions/setup-go@v3
         with:
-          go-version: 1.21
+          go-version: '1.24.1'  
 
-      - name: Run tests with coverage
-        run: go test -coverprofile=coverage.out ./...
+      - name: Cache Go modules
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.cache/go-build
+            ~/go/pkg/mod
+          key: ${{ runner.os }}-go-${{ hashFiles('**/go.sum') }}
+          restore-keys: |
+            ${{ runner.os }}-go-
+
+      - name: Install dependencies
+        run: |
+          go mod tidy
+          go mod vendor
+
+      - name: Run tests and generate coverage report
+        run: |
+          go test -coverprofile=coverage.out
 
       - name: SonarCloud Scan
-        uses: SonarSource/sonarcloud-github-action@v2
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        uses: SonarSource/sonarcloud-github-action@v1
         with:
-          args: >
-            -Dsonar.projectKey=uikinion_kinematic
-            -Dsonar.organization=uikinion
-            -Dsonar.go.coverage.reportPaths=coverage.out
+          sonar-token: ${{ secrets.SONAR_TOKEN }}
