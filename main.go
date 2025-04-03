@@ -23,7 +23,7 @@ func inverseKinematics(x, y, l1, l2 float64) (float64, float64, error) {
 
 	cosB := (-r*r + l1*l1 + l2*l2) / (2 * l1 * l2)
 	cosB = math.Max(-1, math.Min(1, cosB))
-	angleB := math.Acos(cosB) ////..
+	angleB := math.Acos(cosB) //
 
 	theta1 := (math.Atan2(y, x) - angleA) * 180 / math.Pi
 	theta2 := (math.Pi - angleB) * 180 / math.Pi
