@@ -1,3 +1,11 @@
+## [1.5.7](https://github.com/uikinion/kinematic/compare/v1.5.6...v1.5.7) (2025-04-04)
+
+
+### Bug Fixes
+
+* test ([6301780](https://github.com/uikinion/kinematic/commit/63017802447ee1f3155d77e7ed85051d42832682))
+* ver ([5b6662d](https://github.com/uikinion/kinematic/commit/5b6662d34b1ccd209ec161742354e67fae9b9b4d))
+
 ## [1.5.6](https://github.com/uikinion/kinematic/compare/v1.5.5...v1.5.6) (2025-04-04)
 
 
