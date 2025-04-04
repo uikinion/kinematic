@@ -1,5 +1,5 @@
 module.exports = {
-  branches: ["main"], // Указываем, для какой ветки делать релиз
+  branches: ["main"], 
   plugins: [
     "@semantic-release/commit-analyzer",
     "@semantic-release/release-notes-generator",
