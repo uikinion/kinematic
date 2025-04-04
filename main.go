@@ -35,7 +35,7 @@ func inverseKinematics(x, y, l1, l2 float64) (float64, float64, error) {
 	return theta1, theta2, nil
 }
 
-func normalizeAngle(angle float64) float64 { ////
+func normalizeAngle(angle float64) float64 { //////
 	if angle > 180 {
 		return angle - 360
 	} else if angle < -180 {
