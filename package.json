@@ -1,7 +1,7 @@
 {
-  "name": "1",
+  "name": "random",
   "version": "1.0.0",
-  "description": "",
+  "description": "may",
   "main": "index.js",
   "scripts": {
     "release": "semantic-release"
@@ -11,7 +11,7 @@
     "url": "git+https://github.com/uikinion/kinematic.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "sasha",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/uikinion/kinematic/issues"
