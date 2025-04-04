@@ -13,9 +13,9 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # Нужно для анализа коммитов
+          fetch-depth: 0 
 
-      - name: Установка Node.js 20
+      - name: Install Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '22.14.0'
